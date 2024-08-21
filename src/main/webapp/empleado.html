@@ -1,0 +1,171 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>RRHH</title>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/empleado.css">
+		<link rel="stylesheet" href="assets/css/navbar.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	</head>
+	<body>
+		<div class="app">
+			<header class="app-header">
+				<div class="app-header-logo">
+					<div class="logo">
+						<span class="logo-icon">
+							<img src="../webapp/assets/images/janus.png" id="icon" alt="User Icon">
+						</span>
+						<h1 class="logo-title">
+							<span>Janus</span>
+							<span>BPO</span>
+						</h1>
+					</div>
+				</div>
+				<div class="app-header-navigation">
+					<div class="tabs">
+						<a href="dashboard.html" >
+							Inicio
+						</a>
+						<a href="empleado.html" class="active">
+							Empleados
+						</a>
+						<a href="asistencia.html" >
+							Asistencia
+						</a>
+						</a>
+						<a href="permisos.html">
+							Permisos
+						</a>
+						<a href="reportes.html">
+							Reportes
+						</a>
+						<a href="planilla.html">
+							Planilla
+						</a>
+					</div>
+				</div>
+				<div class="app-header-actions">
+					<button class="user-profile">
+						<span>Matheo Peterson</span>
+						<span>
+							<img src="https://assets.codepen.io/285131/almeria-avatar.jpeg" />
+						</span>
+					</button>
+					<div class="app-header-actions-buttons">
+						<button class="icon-button large">
+							<i class="bi bi-search"></i>
+						</button>
+						<button class="icon-button large">
+							<i class="bi bi-bell"></i>
+						</button>
+					</div>
+				</div>
+				<div class="app-header-mobile">
+					<button class="icon-button large">
+						<i class="ph-list"></i>
+					</button>
+				</div>
+		
+			</header>
+	
+	
+	<div class="main-content">
+        <h4>Gestión de Empleados</h4>
+            <!-- Button trigger modal -->
+			<button type="button" class="button-42" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			  Ingresar usuario
+			</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                    <th>Departamento</th>
+                    <th>Puesto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irán las filas generadas dinámicamente -->
+                <tr>
+                    <td>001</td>
+                    <td>Juan Pérez</td>
+                    <td>juan.perez@empresa.com</td>
+                    <td>Recursos Humanos</td>
+                    <td>Gerente</td>
+                    <td>
+                        <button class="button-45" onclick="editEmployee(1)">Editar</button>
+                        <button class="button-43" onclick="deleteEmployee(1)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+	
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="exampleModalLabel">Empleado</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <h1>Ingreso de Datos del Usuario</h1>
+	        <form id="userForm">
+	            <label class="label-modal" for="firstName">Nombres:</label><br>
+	            <input type="text" id="firstName" name="firstName" required><br><br>
+	
+	            <label class="label-modal" for="lastName">Apellidos:</label><br>
+	            <input type="text" id="lastName" name="lastName" required><br><br>
+	
+	            <label class="label-modal" for="email">Correo electrónico:</label><br>
+	            <input type="email" id="email" name="email" required><br><br>
+	
+	            <label class="label-modal" for="identityNumber">Número de identidad:</label><br>
+	            <input type="text" id="identityNumber" name="identityNumber" required><br><br>
+	            
+	            <label class="label-modal" for="identityNumber">Número de telefono:</label><br>
+	            <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+	
+	            <label class="label-modal" for="position">Puesto:</label><br>
+	            <select id="position" name="position" required>
+	                <option value="">Seleccionar puesto</option>
+	                <option value="Gerente">Gerente</option>
+	                <option value="Asistente Administrativo">Asistente Administrativo</option>
+	                <option value="Analista de Recursos Humanos">Analista de Recursos Humanos</option>
+	                <option value="Especialista en Nóminas">Especialista en Nóminas</option>
+	                <option value="Operador de Call Center">Operador de Call Center</option>
+	            </select><br><br>
+	
+	            <label class="label-modal" for="birthdate">Fecha de nacimiento:</label><br>
+	            <input type="date" id="birthdate" name="birthdate" required><br><br>
+	            
+	            <label class="label-modal" for="cv">Curriculum: </label><br>
+	            <input type="file" id="cv" name="cv" required><br><br>
+	            
+	            <label class="label-modal" for="cv">Historial Laboral: </label><br>
+	            <input type="file" id="cv" name="cv" required><br><br>
+	            
+	            <label class="label-modal" for="cv">Antecedentes: </label><br>
+	            <input type="file" id="cv" name="cv" required><br><br>
+	        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button class="button-43" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+		        <button class="button-44" type="button" class="btn btn-primary">Guardar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+	<script src="assets/js/bootstrap.min.js"></script>
+	</body>
+</html>
