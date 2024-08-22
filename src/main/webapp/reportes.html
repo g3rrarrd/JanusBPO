@@ -81,7 +81,7 @@
 	            <select id="reportType">
 	                <option value="payroll">Nómina</option>
 	                <option value="attendance">Asistencia</option>
-	                <option value="performance">Desempeño</option>
+	                <option value="performance">Empleado</option>
 	            </select>
 	
 	            <label for="startDate">Fecha de Inicio:</label>
@@ -114,6 +114,7 @@
 	                        <th>Empleado</th>
 	                        <th>Fecha</th>
 	                        <th>Detalles</th>
+							<th>Acciones</th>
 	                    </tr>
 	                </thead>
 	                <tbody>
@@ -121,11 +122,15 @@
 							<td>Juan Pérez</td>
 							<td>2024-08-18</td>
 							<td>Reporte de asistencia</td>
+							<td>
+								<button onclick="printReport()" class="button-44">Ver</button>
+								<button onclick="printReport()" class="button-45">Eliminar</button>
+							</td>
 						</tr>
 	                </tbody>
-	            </table>
+	            </table><br>
 	            <button onclick="exportReport()" class="button-44">Exportar</button>
-	            <button onclick="printReport()" class="button-45">Imprimir</button>
+	            
 	        </div>
 	    </div>	
 

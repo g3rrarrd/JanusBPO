@@ -26,30 +26,24 @@
             </div>
             <div class="app-header-navigation">
                 <div class="tabs">
-                    <a href="dashboard.html" >
+                    <a href="emp_profile.html" >
                         Inicio
                     </a>
-                    <a href="empleado.html">
-                        Empleados
-                    </a>
-                    <a href="asistencia.html">
+                    <a href="#"  >
                         Asistencia
                     </a>
                     </a>
-                    <a href="permisos.html">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Permisos
                     </a>
-                    <a href="reportes.html">
-                        Reportes
-                    </a>
-                    <a href="planilla.html" class="active">
+                    <a href="planilla_emp.html" class="active">
                         Planilla
                     </a>
                 </div>
             </div>
             <div class="app-header-actions">
                 <button class="user-profile">
-                    <span>Matheo Peterson</span>
+                    <span>Juan Perez</span>
                     <span>
                         <img src="https://assets.codepen.io/285131/almeria-avatar.jpeg" />
                     </span>
@@ -74,8 +68,7 @@
         </header>
     
 <br>
-    <h4>Planilla de Empleados</h4>
-    <button class="button-42" onclick="generateReport()" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</button>
+    <h4>Resumen sueldo</h4>
     <table>
         <thead>
             <tr>
@@ -98,32 +91,10 @@
                 <td>L.200</td>
                 <td>L.4700</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>María López</td>
-                <td>Asistente</td>
-                <td>L.300</td>
-                <td>L.150</td>
-                <td>L.2850</td>
-                <td>L.3000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Carlos García</td>
-                <td>Desarrollador</td>
-                <td>L.4000</td>
-                <td>L.400</td>
-                <td>L.100</td>
-                <td>L.3700</td>
-            </tr>
         </tbody>
     </table>
     <br>
-    <div class="div-btn">
-        <button onclick="exportReport()" class="button-44">Exportar</button>
-	<button onclick="printReport()" class="button-45">Imprimir</button>
-    </div>
-
+    
 
 
   
@@ -132,45 +103,33 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Ingresar datos planilla</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Permisos</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-                        <div class="report-filters">
-                            <label for="reportType">ID empleado:</label>
-                            <select id="reportType">
-                                <option value="payroll">1</option>
-                                <option value="attendance">/option>
-                                <option value="performance">3</option>
-                            </select>
-                
-                            <div class="report-filters">
-                                <label for="reportType">Posicion:</label>
-                                <select id="reportType">
-                                    <option value="payroll">Admin</option>
-                                    <option value="payroll">Atencion al cliente</option>
-                                    <option value="performance">Asistente</option>
-                                </select>
-                
-                            <br><label for="endDate">Sueldo bruto:</label>
-                            <input type= "number" id="endDate"><br>
-
-                            <label for="endDate">Deducciones:</label>
-                            <input type= "number" id="endDate">
-                            
-                            <br><label for="endDate">Bonificaciones:</label>
-                            <input type= "number" id="endDate">
-                
-                        </div>
+            <span class="close">&times;</span>
+            <h2>Solicitud de Permiso</h2>
+            <form action="/submit-permission" method="post">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" required>
+                <br><br>
+              <label for="department">Departamento:</label>
+              <input type="text" id="department" name="department" required>
+                <br><br>
+              <label for="date">Fecha del Permiso:</label>
+              <input type="date" id="date" name="date" required>
+                <br><br>
+              <label for="reason">Motivo:</label>
+              <textarea id="reason" name="reason" rows="4" required></textarea>
+            </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-primary">Enviar Solicitud</button>
         </div>
       </div>
     </div>
   </div>
-    
 
 
 
