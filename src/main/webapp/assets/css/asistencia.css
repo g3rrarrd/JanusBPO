@@ -95,7 +95,8 @@ textarea {
 }
 
 a {
-	color: black !important;
+	margin-right: 30px;
+	color: #000 !important;
 }
 
 .responsive-wrapper {

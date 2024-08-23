@@ -28,10 +28,6 @@
 						<a href="emp_profile.html" class="active">
 							Inicio
 						</a>
-						<a href="#"  >
-							Asistencia
-						</a>
-						</a>
 						<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
 							Permisos
 						</a>
@@ -75,7 +71,7 @@
 	            <p><strong>Puesto:</strong> Gerente</p>
 	            <p><strong>Fecha de Ingreso:</strong> 20/02/20</p>
 	            <p><strong>Fecha de Nacimiento:</strong> 01/01/98</p>
-	            <p><strong>Contanto de Referencia:</strong> Juan Galmez</p>
+	            <p><strong>Contacto de Referencia:</strong> Juan Galmez</p>
 	            <p><strong>Numero de telefono:</strong> 9090xxxxx</p>
 	            <button onclick="editProfile()">Editar Perfil</button>
 	            <button onclick="editProfile()">Curriculum</button>
@@ -105,6 +101,12 @@
 					  <label for="department">Departamento:</label>
 					  <input type="text" id="department" name="department" required>
 						<br><br>
+						<label for="reportType">Tipo de permiso:</label>
+						<select id="reportType">
+							<option value="payroll">Medico</option>
+							<option value="attendance">Vacaciones</option>
+							<option value="performance">Otros</option>
+						</select><br>
 					  <label for="date">Fecha del Permiso:</label>
 					  <input type="date" id="date" name="date" required>
 						<br><br>
